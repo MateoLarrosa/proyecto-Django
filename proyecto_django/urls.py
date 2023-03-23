@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from proyecto_django import views
 
 urlpatterns = [
+    path('',views.mi_vista),
+    path('mostrar-fecha/',views.mostar_fecha),
+    #pasando parametros por URL
+    path('saludar/<int:num1>/<int:num2>/',views.saludar),
+    path('mi-primer-template/',views.mi_primer_template),
     path('admin/', admin.site.urls),
 ]
