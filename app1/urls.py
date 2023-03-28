@@ -9,4 +9,5 @@ urlpatterns = [
     path('otro-template/',views.prueba_template),
     path('mi-primer-template/',views.mi_primer_template),
     path('crear-animal/',views.crear_animal),
+    path('prueba-render/',views.prueba_render),
 ]

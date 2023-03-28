@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template,Context,loader
 from app1.models import Animal
+from django.shortcuts import render
 
 #primera view de la forma mas principiante
 def mi_vista(request):
@@ -35,19 +36,19 @@ def suma(request,num1,num2):
 
 # template de la forma con el open
 def mi_primer_template(request):
-    archivo = open(r'C:\Users\Usuario\Desktop\clase17\proyecto-Django\templates\mi_template.html','r')
+    #archivo = open(r'C:\Users\Usuario\Desktop\clase17\proyecto-Django\templates\mi_template.html','r')
     
-    template = Template(archivo.read())
+    #template = Template(archivo.read())
     
-    archivo.close()
+    #archivo.close()
     
-    context = Context(template)
+    #context = Context(template)
     
-    template_renderizado = template.render(context)
+    #template_renderizado = template.render(context)
     
-    return HttpResponse(template_renderizado)
+    #return HttpResponse(template_renderizado)
 
-def prueba_template(request):
+ def prueba_template(request):
     
     datos = {
         'nombre': 'Pepito',
@@ -58,7 +59,7 @@ def prueba_template(request):
         ]
     }
     
-    template = loader.get_template(r'otro_template.html')
+    template = loader.get_template(r'app1/otro_template.html')
     template_renderizado = template.render(datos)
     return HttpResponse(template_renderizado)
 
@@ -66,6 +67,11 @@ def crear_animal(request):
     animal1 = Animal(nombre='Elias gomez',edad=28)
     animal1.save() #Con este metodo se guarda en la base de datos
     datos = {'animal':animal1} 
-    template = loader.get_template(r'crear_animal.html')
+    template = loader.get_template(r'app1/crear_animal.html')
     template_renderizado = template.render(datos)
     return HttpResponse(template_renderizado)
+
+#con render solo
+def prueba_render(request): #request tiene toda la info almacenada de las consultas que hace el usuario a nuestros servicios
+    datos = {'nombre': 'pepe'}
+    return render(request, r'app1/prueba_render.html',datos)

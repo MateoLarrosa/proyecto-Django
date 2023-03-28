@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
+        'APP_DIRS': True, #En true agarra todas las carpetas template del proyecto y lo junta internamente en una sola para poder buscarlo
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
