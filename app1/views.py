@@ -5,15 +5,14 @@ from django.template import Template,Context,loader
 from app1.models import Animal
 from django.shortcuts import render
 
-#primera view de la forma mas principiante
 def mi_vista(request):
-    return HttpResponse('<h1>Mi primera vista</h1><br><p>soy un parrafo</p>')
+    return(request,r'app1/index.html') 
 
 # view de la forma correcta 
 def mostrar_fecha(request):
     dt = datetime.now()
     dt_formateado = dt.strftime('%A %d %B %Y %I:%M')
-    template = loader.get_template('mostrar_fecha.html')
+    template = loader.get_template(r'app1/mostrar_fecha.html')
     
     datos = {'fecha': dt_formateado}
     
@@ -24,7 +23,7 @@ def mostrar_fecha(request):
 
 # view de la forma correcta con parametros por la url
 def suma(request,num1,num2):
-    Template = loader.get_template('suma.html')
+    Template = loader.get_template(r'app1/suma.html')
     
     numeros = {
         'num1' : num1,
