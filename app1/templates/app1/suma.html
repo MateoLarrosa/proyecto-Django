@@ -7,7 +7,7 @@
     <title>Sumando numeros</title>
 </head>
 <body>
-    {% if type({{num1}}) = int and type({{num2}}) = int %}
+    {% if type({{num1}}) == int and type({{num2}}) == int %}
     <p> La suma de los dos numeros que ingresaste es: {{rta}}</p>
     {%else%}
     <p>No ingreso numeros enteros</p>

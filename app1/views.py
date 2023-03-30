@@ -6,7 +6,7 @@ from app1.models import Animal
 from django.shortcuts import render
 
 def index(request):
-    return(request,r'app1/index.html') 
+    return render(request,r'app1/index.html') 
 
 # view de la forma correcta 
 def mostrar_fecha(request):
