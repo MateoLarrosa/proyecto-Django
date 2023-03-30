@@ -9,7 +9,9 @@ class Animal(models.Model):
      nombre = models.CharField(max_length=20) #charfield si o si se le pasa el maxlenght del str
      edad =  models.IntegerField() #No es necesario pasarle valor
 
-class Persona(models.Model):
-    nombre = models.CharField(max_length=20)
-    apellido = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField()
+class Familiares(models.Model):
+     nombre = models.CharField(max_length=20)
+     apellido = models.CharField(max_length=20)
+     fecha_nacimiento = models.CharField(max_length=10)
+     documento = models.IntegerField()
+     edad = models.IntegerField()

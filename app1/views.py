@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template,Context,loader
 from app1.models import Animal
+from app1.models import Familiares
 from django.shortcuts import render
 
 def index(request):
@@ -73,3 +74,13 @@ def crear_animal(request):
 def prueba_render(request): #request tiene toda la info almacenada de las consultas que hace el usuario a nuestros servicios
     datos = {'nombre': 'pepe'}
     return render(request, r'app1/prueba_render.html',datos)
+
+def mi_familia(request):
+    hermana = Familiares(nombre='Claudia',apellido='hernandez',fecha_nacimiento='02/05/2005',documento=46642774,edad=17)
+    primo = Familiares(nombre='Jose',apellido='hernandez',fecha_nacimiento='23/11/2003',documento=43642774,edad=19)
+    hermana.save()
+    primo.save()
+    datos = {'Claudia' : hermana,
+            'Jose' : primo
+            }
+    return render(request, r'app1/mi_familia.html',datos)
