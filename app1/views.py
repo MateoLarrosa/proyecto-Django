@@ -5,7 +5,7 @@ from django.template import Template,Context,loader
 from app1.models import Animal
 from django.shortcuts import render
 
-def mi_vista(request):
+def index(request):
     return(request,r'app1/index.html') 
 
 # view de la forma correcta 
@@ -34,7 +34,7 @@ def suma(request,num1,num2):
     return HttpResponse(Template_renderizado)
 
 # template de la forma con el open
-def mi_primer_template(request):
+#def mi_primer_template(request):
     #archivo = open(r'C:\Users\Usuario\Desktop\clase17\proyecto-Django\templates\mi_template.html','r')
     
     #template = Template(archivo.read())
@@ -47,8 +47,7 @@ def mi_primer_template(request):
     
     #return HttpResponse(template_renderizado)
 
- def prueba_template(request):
-    
+def prueba_template(request):
     datos = {
         'nombre': 'Pepito',
         'apellido': 'Grillo',
