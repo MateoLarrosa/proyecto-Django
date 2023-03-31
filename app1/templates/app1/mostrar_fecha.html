@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mostrando fecha</title>
-</head>
-<body>
-    <h3>{{fecha}}</h3>
-</body>
-</html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block Template_head%}
+<title>Mostrando fecha</title>       
+{% endblock Template_head%}
+
+{%block h1_header%}
+<h3>La fecha exacta en este momento es:</h3>
+{% endblock h1_header%}
+
+{%block mensaje%}
+<h2>{{fecha}}</h2>
+{% endblock mensaje%}
